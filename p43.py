@@ -1,10 +1,18 @@
 my_list=[]
-for i in range(7):
-    a=float(input('Create your list.Enter the integer '))
-    while a!=int(a):
-       a=float(input('You did not enter an integer.Enter the integer ') )
-    a=int(a)
-    my_list.append(float(input('Create your list.Enter the number ')))
+print('Creating the list')
+while len(my_list)<7:
+    a=(input('Enter the integer: '))
+    try:
+        val=int(a)
+        my_list.append(val)
+    except ValueError:
+        try:
+            val=float(a)
+            print('You entered a float. ')
+            pass
+        except ValueError:
+            print('Your did not enter a number. ')
+            pass
 x=float(input('Enter the  index '))
 while x<0 or x>6 or x!=int(x):#Entered indexes must be integer and in the range of list.
     x=float(input('Index you have entered is out of range or non-integer.Enter the index again. '))
